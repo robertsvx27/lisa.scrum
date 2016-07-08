@@ -8,4 +8,16 @@ describe Ahorcado do
 		ahorcado = Ahorcado.new
 		ahorcado.getBuscarLetra("E").should==1
 	end
+	it "deberia devolver true si Acertadas = 8" do
+		ahorcado = Ahorcado.new
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.sumarAcertada
+		ahorcado.finJuego.should==true
+	end
 end
