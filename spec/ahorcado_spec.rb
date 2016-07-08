@@ -18,6 +18,6 @@ describe Ahorcado do
 		ahorcado.sumarAcertada
 		ahorcado.sumarAcertada
 		ahorcado.sumarAcertada
-		ahorcado.finJuego.should==true
+		ahorcado.finJuego.should==1
 	end
 end

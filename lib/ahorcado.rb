@@ -4,13 +4,13 @@ class Ahorcado
 		@acertadas = 0
 		@fallidas = 0
 		@maxFallidas = 6
-		@cantidadLetras = 0
+		@cantidadLetras = 0		
 	end
 	def getPalabra
 		@palabra
 	end
 	def getBuscarLetra(letra)
-		if @palabra.include? letra
+		if @palabra.include? letra			
 			1
 		else
 			0
@@ -21,9 +21,11 @@ class Ahorcado
 	end
 	def finJuego
 		if getAcertadas==getCantidadLetras
-		    true
+			1
 		elsif getFallidas==@maxFallidas
-			false
+			2
+		else
+			0
 		end
 	end
 	def getAcertadas
@@ -37,5 +39,8 @@ class Ahorcado
 	end
 	def sumarFallida
 		@fallidas +=1		
+	end
+	def getMaxFallidas
+		@maxFallidas
 	end
 end
