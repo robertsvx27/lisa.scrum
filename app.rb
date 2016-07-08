@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-    "Bienvenido Roberto"
+    erb:inicio
 end
