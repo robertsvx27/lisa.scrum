@@ -4,4 +4,8 @@ describe Ahorcado do
 		ahorcado = Ahorcado.new
 		ahorcado.getPalabra.should=="ELEFANTE"
 	end
+	it "deberia devolver 1 si envio letra E" do
+		ahorcado = Ahorcado.new
+		ahorcado.getBuscarLetra("E").should==1
+	end
 end
