@@ -10,10 +10,12 @@ get '/' do
 	@@objAhorcado=Ahorcado.new()
     erb:inicio
 end
-=begin
-get '/juego' do
+#=begin
+	get '/juego' do
 	@@objAhorcado=Ahorcado.new()
-	@letra=params[:letra]
+	#@letra=params[:letra]
+
+	@strMensaje=@@objAhorcado.getVerificarPalabra(nil)
 
 	@acertadas=@@objAhorcado.getAcertadas()
 	@fallidas=@@objAhorcado.getFallidas()
@@ -22,7 +24,7 @@ get '/juego' do
 	@imagenAhorcado="image#{@fallidas}.png"
     erb:juego
 end
-=end
+#=end
 
 post '/juego' do #interfaz de juego
 	@accion=params[:accion]	
