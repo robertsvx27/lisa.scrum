@@ -16,7 +16,11 @@ class Ahorcado
 		@pista = pista.to_s.upcase
 	end
 	def getPista
-		
+		if @pidioPista==0
+			@fallidas=1
+			@pidioPista=1
+		end
+		@pista
 	end
 	def setPalabra(palabra)
 		@palabra=palabra.to_s.upcase
