@@ -6,6 +6,17 @@ class Ahorcado
 		@maxFallidas = 6
 		@cantidadLetras = 0		
 		@vectorPalabra = []
+		@pista = ""
+		@pidioPista=0
+	end
+	def setPista(pista)
+		if pista==nil
+			pista=""
+		end
+		@pista = pista.to_s.upcase
+	end
+	def getPista
+		
 	end
 	def setPalabra(palabra)
 		@palabra=palabra.to_s.upcase
