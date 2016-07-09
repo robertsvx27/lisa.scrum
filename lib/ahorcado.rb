@@ -14,7 +14,7 @@ class Ahorcado
 		if letra == nil
 			@fallidas += 1
 			return 0			
-		elsif @palabra.include? letra
+		elsif @palabra.include? letra.to_s.upcase
 			@acertadas += getNroLetras(letra)			
 			return 1
 		else
