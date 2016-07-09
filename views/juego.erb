@@ -1,5 +1,6 @@
 <center>
 <div style="background:skyblue;margin:0 auto;"><h1>Jugando Lisa.scrum</h1></div>
+<br>
 <html>
 <head>
 <title>Lisa Scrum</title>
@@ -7,21 +8,34 @@
 <body style="background:beige;margin:10px auto;">
 <div style="background:white;margin:0 auto;display: inline-block;vertical-align: top;">
 <form method="post" action="/juego">
-Ingrese una letra
-<input type="text" name="letra" value="" maxlength="1" size="5" />
-<input type="submit" name="adivina" value="adivina" />
+<input type="hidden" name="accion" value="2">
+<table><tr>
+<td>Ingrese una letra</td>
+<td><input type="text" name="letra" value="" maxlength="1" size="5" /></td>
+<td><input type="submit" name="adivina" value="adivina" /></td>
+<td><input type="submit" name="boton_pedir_pista" value="pedir pista" onclick="javascript:this.form.accion.value='3';" /></td>
+</tr></table>
 </form>
-<br>
+</br>
+<div style="color:brown;">Pista de la palabra secreta: <%= @pista %></div>
+</br>
 <div style="color:blue;margin:0 auto;">Letras acertadas: <%= @acertadas %>/<%= @cantidadLetras %></div>
 <br>
 <div style="color:red;margin:0 auto;">Intentos fallidos: <%= @fallidas %>/<%= @maxFallidas %></div>
-
 <h1 style="color:green;"><%= @strMensaje %></h1>
 </div>
 <div style="display: inline-block;vertical-align: top;">
 <img src="<%= @imagenAhorcado %>" height="200" width="150">
 </div>
 <div>
+<% if @strMensaje!="Jugando..." then %>
+<h1 style="color:orange;">La palabra secreta era <%= @palabra_secreta %></h1>
+<% end %>
 </div>
+<form method="get" action="/">
+<input type="submit" name="nuevo_juego" value="Nuevo juego" />
+</form>
 </body>
 </html>
+
+
