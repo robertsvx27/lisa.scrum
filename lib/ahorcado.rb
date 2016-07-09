@@ -11,7 +11,10 @@ class Ahorcado
 		@palabra
 	end
 	def getBuscarLetra(letra)
-		if @palabra.include? letra
+		if letra == nil
+			@fallidas += 1
+			return 0			
+		elsif @palabra.include? letra
 			@acertadas += getNroLetras(letra)			
 			return 1
 		else
