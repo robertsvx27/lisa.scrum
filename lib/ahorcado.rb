@@ -7,6 +7,9 @@ class Ahorcado
 		@cantidadLetras = 0		
 		@vectorPalabra = []
 	end
+	def setPalabra(palabra)
+		@palabra=palabra.to_s.upcase
+	end
 	def getPalabra
 		@palabra
 	end

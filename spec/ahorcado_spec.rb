@@ -40,4 +40,9 @@ describe Ahorcado do
 		ahorcado.getBuscarLetra("N")
 		ahorcado.getVerificarPalabra("T").should=="Ganaste :)"
 	end
+	it "deberia devolver la palabra que registro ELEFANTE" do
+		ahorcado = Ahorcado.new
+		ahorcado.setPalabra("elefante")
+		ahorcado.getPalabra.should=="ELEFANTE"
+	end
 end
