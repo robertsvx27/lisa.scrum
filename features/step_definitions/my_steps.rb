@@ -8,3 +8,8 @@ end
 When /^presiono el boton "(.*)"$/ do |nombre_boton|
 	click_button(nombre_boton)
 end
+
+Given(/^estoy en la pagina de juego$/) do
+  visit '/juego'
+end
+

@@ -9,3 +9,7 @@ Given estoy en la pagina de inicio
 When presiono el boton "jugar"
 Then quiero ver el mensaje "Jugando Lisa.scrum"
 
+Scenario: A inicio en la pagina de juego
+Given estoy en la pagina de juego
+Then quiero ver el mensaje "Letras acertadas: 0/8"
+
