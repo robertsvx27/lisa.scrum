@@ -24,4 +24,3 @@ Then quiero ver el mensaje "Intentos fallidos: 0/6"
 
 
 
-

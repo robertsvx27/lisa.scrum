@@ -1,4 +1,11 @@
-Jugando Lisa.scrum
+<center>
+<div style="background:skyblue;margin:0 auto;"><h1>Jugando Lisa.scrum</h1></div>
+<html>
+<head>
+<title>Lisa Scrum</title>
+</head>
+<body style="background:beige;margin:10px auto;">
+<div style="background:white;margin:0 auto;display: inline-block;vertical-align: top;">
 <form method="post" action="/juego">
 Ingrese una letra
 <input type="text" name="letra" value="" maxlength="1" size="5" />
@@ -10,4 +17,11 @@ Ingrese una letra
 <div style="color:red;margin:0 auto;">Intentos fallidos: <%= @fallidas %>/<%= @maxFallidas %></div>
 
 <h1 style="color:green;"><%= @strMensaje %></h1>
-
+</div>
+<div style="display: inline-block;vertical-align: top;">
+<img src="<%= @imagenAhorcado %>" height="200" width="150">
+</div>
+<div>
+</div>
+</body>
+</html>

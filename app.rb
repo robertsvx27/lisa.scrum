@@ -3,7 +3,7 @@ require './lib/ahorcado'
 
 configure do
 	enable :sessions
-	@@objAhorcado=Ahorcado.new()
+	@@objAhorcado=Ahorcado.new()    
 end
 
 get '/' do
@@ -18,7 +18,7 @@ get '/juego' do
 	@fallidas=@@objAhorcado.getFallidas()
 	@cantidadLetras=@@objAhorcado.getCantidadLetras()
 	@maxFallidas=@@objAhorcado.getMaxFallidas()
-
+	@imagenAhorcado="image#{@fallidas}.png"
     erb:juego
 end
 
@@ -31,7 +31,7 @@ post '/juego' do #interfaz de juego
 	@fallidas=@@objAhorcado.getFallidas()
 	@cantidadLetras=@@objAhorcado.getCantidadLetras()
 	@maxFallidas=@@objAhorcado.getMaxFallidas()
-
+	@imagenAhorcado="image#{@fallidas}.png"
 	erb:juego
 
 		
