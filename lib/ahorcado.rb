@@ -15,9 +15,12 @@ class Ahorcado
 		end
 		@pista = pista.to_s.upcase
 	end
+	def getPidioPista()
+		return @pidioPista
+	end
 	def getPista
 		if @pidioPista==0
-			@fallidas=1
+			@fallidas+=1
 			@pidioPista=1
 		end
 		@pista

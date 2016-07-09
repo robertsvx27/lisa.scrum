@@ -1,13 +1,26 @@
-Jugando Lisa.scrum
-<form method="post" action="/juego">
-Ingrese una letra
-<input type="text" name="letra" value="" maxlength="1" size="5" />
-<input type="submit" name="adivina" value="adivina" />
-</form>
+<h1 style="color:blue;">Jugando Lisa.scrum</h1>
 <br>
+<%= @pista %>
+<form method="post" action="/juego">
+<input type="hidden" name="accion" value="2">
+<table><tr>
+<td>Ingrese una letra</td>
+<td><input type="text" name="letra" value="" maxlength="1" size="5" /></td>
+<td><input type="submit" name="adivina" value="adivina" /></td>
+<td><input type="submit" name="boton_pedir_pista" value="pedir pista" onclick="javascript:this.form.accion.value='3';" /></td>
+</tr></table>
+</form>
+</br>
+<div style="color:brown;">Pista de la palabra secreta: <%= @pista %></div>
+</br>
 <div style="color:blue;margin:0 auto;">Letras acertadas: <%= @acertadas %>/<%= @cantidadLetras %></div>
 <br>
 <div style="color:red;margin:0 auto;">Intentos fallidos: <%= @fallidas %>/<%= @maxFallidas %></div>
 
 <h1 style="color:green;"><%= @strMensaje %></h1>
-
+<% if @strMensaje!="Jugando..." then %>
+<h1 style="color:orange;">La palabra secreta era <%= @palabra_secreta %></h1>
+<% end %>
+<form method="get" action="/">
+<input type="submit" name="nuevo_juego" value="Nuevo juego" />
+</form>
