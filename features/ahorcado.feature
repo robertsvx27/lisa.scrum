@@ -11,5 +11,17 @@ Then quiero ver el mensaje "Jugando Lisa.scrum"
 
 Scenario: A inicio en la pagina de juego
 Given estoy en la pagina de juego
-Then quiero ver el mensaje "Letras acertadas: 0/8"
+Then quiero ver el mensaje "Jugando..."
+
+Scenario: A inicio en la pagina de juego
+Given estoy en la pagina de juego
+Then quiero ver el mensaje "Letras acertadas: 0/"
+
+Scenario: A inicio en la pagina de juego
+Given estoy en la pagina de juego
+Then quiero ver el mensaje "Intentos fallidos: 0/6"
+
+
+
+
 
