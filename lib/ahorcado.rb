@@ -79,7 +79,7 @@ class Ahorcado
 		elsif @resultado == 2
 			@resp="Perdiste ;["
 		else
-			@resp="Jugando"
+			@resp="Jugando..."
 		end			
 		return @resp
 	end
