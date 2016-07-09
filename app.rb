@@ -10,6 +10,7 @@ get '/' do
 	@@objAhorcado=Ahorcado.new()
     erb:inicio
 end
+=begin
 get '/juego' do
 	@@objAhorcado=Ahorcado.new()
 	@letra=params[:letra]
@@ -21,39 +22,33 @@ get '/juego' do
 
     erb:juego
 end
+=end
 
 post '/juego' do #interfaz de juego
 	@accion=params[:accion]	
-	@pista=params[:pista]	
+	@accion=@accion.to_i
 	case @accion
 		when 1 #registrar palabras
 			@palabra_secreta=params[:palabra_secreta]
 			@pista=params[:pista]
-
+	
+			@@objAhorcado=Ahorcado.new()
 			@@objAhorcado.setPalabra(@palabra_secreta)
 			@@objAhorcado.setPista(@pista)
+			@strMensaje=@@objAhorcado.getVerificarPalabra(nil)	
 		when 2 #jugar
 			@letra=params[:letra]
 			@strMensaje=@@objAhorcado.getVerificarPalabra(@letra)	
-		when 3 #pedir pedir pista
-			@pista=@@objAhorcado.getPista()
+		when 3
+			@strMensaje=@@objAhorcado.getVerificarPalabra(nil)	
 	end
-	#@letra=params[:letra]
-	#@palabra_secreta=params[:palabra_secreta]
-	#@pista=params[:pista]
-	#@pedir_pista=params[:pedir_pista]
-	#if @palabra_secreta then
-	#	@@objAhorcado.setPalabra(@palabra_secreta)
-	#end
-	#if @pista then
-	#	@@objAhorcado.setPista(@pista)
-	#	@pista=""
-	#if @@objAhorcado.getPidioPista()==1 then
-	#	@pista=@@objAhorcado.getPista()
-	#end
+
+	if @accion==3 or @@objAhorcado.getPidioPista()==1 then
+		@pista=@@objAhorcado.getPista()
+	end
 
 	@palabra_secreta=@@objAhorcado.getPalabra()
-	@strMensaje=@@objAhorcado.getVerificarPalabra(@letra)
+	#@strMensaje=@@objAhorcado.getVerificarPalabra(@letra)
 
 	#actualizar contadores
 	@acertadas=@@objAhorcado.getAcertadas()
