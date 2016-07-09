@@ -15,9 +15,8 @@ class Ahorcado
 	end
 	def getBuscarLetra(letra)
 		if letra == nil
-			@fallidas += 1
 			return 0			
-		elsif @palabra.include? letra.to_s.upcase
+		elsif @palabra.include? letra
 			@acertadas += getNroLetras(letra)			
 			return 1
 		else
@@ -58,8 +57,10 @@ class Ahorcado
 		@contador=0
 		for item in @vector
 			if item==letra
-				@cantidad +=1
-				@vectorPalabra[@contador]=(letra)				
+				if @vectorPalabra[@contador]==nil
+					@cantidad +=1
+					@vectorPalabra[@contador]= letra
+				end
 			end
 			@contador +=1
 		end		
@@ -69,6 +70,7 @@ class Ahorcado
 		@vectorPalabra	
 	end
 	def getVerificarPalabra(letra)
+		letra = letra.to_s.upcase
 		getBuscarLetra(letra)
 		@resultado = finJuego
 		@resp=""
@@ -77,7 +79,7 @@ class Ahorcado
 		elsif @resultado == 2
 			@resp="Perdiste ;["
 		else
-			@resp="Continuar"
+			@resp="Jugando"
 		end			
 		return @resp
 	end
