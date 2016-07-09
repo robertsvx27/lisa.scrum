@@ -7,6 +7,7 @@ configure do
 end
 
 get '/' do
+	@@objAhorcado=Ahorcado.new()
     erb:inicio
 end
 get '/juego' do
@@ -24,7 +25,7 @@ end
 post '/juego' do #interfaz de juego
 	@letra=params[:letra]
 
-	#@bolBuscarLetra=@@objAhorcado.getBuscarLetra(@letra)
+	@strMensaje=@@objAhorcado.getVerificarPalabra(@letra)
 
 	@acertadas=@@objAhorcado.getAcertadas()
 	@fallidas=@@objAhorcado.getFallidas()
@@ -32,4 +33,6 @@ post '/juego' do #interfaz de juego
 	@maxFallidas=@@objAhorcado.getMaxFallidas()
 
 	erb:juego
+
+		
 end
