@@ -3,7 +3,7 @@ require './lib/ahorcado'
 
 configure do
 	enable :sessions
-	@@objAhorcado=Ahorcado.new()
+	@@objAhorcado=Ahorcado.new()    
 end
 
 get '/' do
@@ -19,7 +19,7 @@ get '/juego' do
 	@fallidas=@@objAhorcado.getFallidas()
 	@cantidadLetras=@@objAhorcado.getCantidadLetras()
 	@maxFallidas=@@objAhorcado.getMaxFallidas()
-
+	@imagenAhorcado="image#{@fallidas}.png"
     erb:juego
 end
 =end
@@ -35,7 +35,8 @@ post '/juego' do #interfaz de juego
 			@@objAhorcado=Ahorcado.new()
 			@@objAhorcado.setPalabra(@palabra_secreta)
 			@@objAhorcado.setPista(@pista)
-			@strMensaje=@@objAhorcado.getVerificarPalabra(nil)	
+			@strMensaje=@@objAhorcado.getVerificarPalabra(nil)
+			@pista=""	
 		when 2 #jugar
 			@letra=params[:letra]
 			@strMensaje=@@objAhorcado.getVerificarPalabra(@letra)	
@@ -55,7 +56,7 @@ post '/juego' do #interfaz de juego
 	@fallidas=@@objAhorcado.getFallidas()
 	@cantidadLetras=@@objAhorcado.getCantidadLetras()
 	@maxFallidas=@@objAhorcado.getMaxFallidas()
-	
+	@imagenAhorcado="image#{@fallidas}.png"
 	erb:juego
 
 		
