@@ -12,10 +12,11 @@ class Ahorcado
 	end
 	def getBuscarLetra(letra)
 		if @palabra.include? letra
-			@acertadas = getNroLetras(letra)			
+			@acertadas += getNroLetras(letra)			
 			return 1
 		else
-			0
+			@fallidas += 1
+			return 0
 		end
 	end
 	def getCantidadLetras
@@ -60,5 +61,18 @@ class Ahorcado
 	end
 	def getObtenerLetrasAdivinadas
 		@vectorPalabra	
+	end
+	def getVerificarPalabra(letra)
+		getBuscarLetra(letra)
+		@resultado = finJuego
+		@resp=""
+		if @resultado == 1
+			@resp="Ganaste :)"
+		elsif @resultado == 2
+			@resp="Perdiste ;["
+		else
+			@resp="Continuar"
+		end			
+		return @resp
 	end
 end

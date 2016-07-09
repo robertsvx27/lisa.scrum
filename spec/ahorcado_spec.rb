@@ -30,4 +30,14 @@ describe Ahorcado do
 		ahorcado.getBuscarLetra("E")
 		ahorcado.getObtenerLetrasAdivinadas.should==["E",nil,"E",nil,nil,nil,nil,"E"]
 	end
+	
+	it "deberia mostrar Ganaste :) si envio toda la palabra ELEFANTE" do
+		ahorcado = Ahorcado.new
+		ahorcado.getBuscarLetra("E")
+		ahorcado.getBuscarLetra("L")
+		ahorcado.getBuscarLetra("F")
+		ahorcado.getBuscarLetra("A")
+		ahorcado.getBuscarLetra("N")
+		ahorcado.getVerificarPalabra("T").should=="Ganaste :)"
+	end
 end
