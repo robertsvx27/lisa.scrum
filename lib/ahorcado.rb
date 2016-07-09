@@ -5,6 +5,7 @@ class Ahorcado
 		@fallidas = 0
 		@maxFallidas = 6
 		@cantidadLetras = 0		
+		@vectorPalabra = []
 	end
 	def getPalabra
 		@palabra
@@ -47,11 +48,17 @@ class Ahorcado
 	def getNroLetras(letra)
 		@cantidad=0
         @vector = @palabra.split("")
+		@contador=0
 		for item in @vector
 			if item==letra
 				@cantidad +=1
+				@vectorPalabra[@contador]=(letra)				
 			end
+			@contador +=1
 		end		
 		@cantidad
+	end
+	def getObtenerLetrasAdivinadas
+		@vectorPalabra	
 	end
 end

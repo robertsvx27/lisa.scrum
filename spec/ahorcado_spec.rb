@@ -24,4 +24,10 @@ describe Ahorcado do
 		ahorcado = Ahorcado.new
 		ahorcado.getNroLetras("E").should==3
 	end
+	
+	it "deberia mostrar vector ['E',nil,'E',nil,nil,nil,nil,'E'] cuando busque la letra E" do
+		ahorcado = Ahorcado.new
+		ahorcado.getBuscarLetra("E")
+		ahorcado.getObtenerLetrasAdivinadas.should==["E",nil,"E",nil,nil,nil,nil,"E"]
+	end
 end
