@@ -10,8 +10,9 @@ class Ahorcado
 		@palabra
 	end
 	def getBuscarLetra(letra)
-		if @palabra.include? letra			
-			1
+		if @palabra.include? letra
+			@acertadas = getNroLetras(letra)			
+			return 1
 		else
 			0
 		end
@@ -42,5 +43,15 @@ class Ahorcado
 	end
 	def getMaxFallidas
 		@maxFallidas
+	end
+	def getNroLetras(letra)
+		@cantidad=0
+        @vector = @palabra.split("")
+		for item in @vector
+			if item==letra
+				@cantidad +=1
+			end
+		end		
+		@cantidad
 	end
 end

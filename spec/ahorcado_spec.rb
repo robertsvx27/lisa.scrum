@@ -20,4 +20,8 @@ describe Ahorcado do
 		ahorcado.sumarAcertada
 		ahorcado.finJuego.should==1
 	end
+	it "deberia devolver 3 si envio la letra E" do
+		ahorcado = Ahorcado.new
+		ahorcado.getNroLetras("E").should==3
+	end
 end
