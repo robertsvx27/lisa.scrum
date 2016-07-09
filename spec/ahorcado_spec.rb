@@ -50,4 +50,15 @@ describe Ahorcado do
 		ahorcado.setPalabra("elefante")
 		ahorcado.getPalabra.should=="ELEFANTE"
 	end
+	it "deberia devolver la pista que registre" do
+		ahorcado = Ahorcado.new
+		ahorcado.setPista("se parece a una casa")
+		ahorcado.getPista.should=="SE PARECE A UNA CASA"
+	end
+	it "deberia devolver 1 falla si pido pista" do
+		ahorcado = Ahorcado.new
+		ahorcado.setPista("se parece a una casa")
+		ahorcado.getPista
+		ahorcado.getFallidas.should==1
+	end
 end
